@@ -122,7 +122,7 @@ int main()
 
 	checkCorrectness(cOutput, asmOutput);
 	printf("Average C execution time: %lf\n", cTime);
-	printf("Average x86-64 assembly execution time: %lf\n", asmTime); // TODO: update with assembly function call.
+	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
 
 	free(a);
 	free(b);
@@ -155,7 +155,7 @@ int main()
 	
 	checkCorrectness(cOutput, asmOutput);
 	printf("Average C execution time: %lf\n", cTime);
-	printf("Average x86-64 assembly execution time: %lf\n", asmTime); // TODO: update with assembly function call.
+	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
 
 	free(a);
 	free(b);
@@ -190,7 +190,7 @@ int main()
 
 	checkCorrectness(cOutput, asmOutput);
 	printf("Average C execution time: %lf\n", cTime);
-	printf("Average x86-64 assembly execution time: %lf\n", asmTime); // TODO: update with assembly function call.
+	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
 
 	free(a);
 	free(b);

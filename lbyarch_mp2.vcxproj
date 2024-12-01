@@ -131,12 +131,18 @@
     <CustomBuild Include="asmDotProduct.asm">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">c:\nasm\nasm -f win64 asmDotProduct.asm</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nasm -f win64 asmDotProduct.asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">asmDotProduct.obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nasm -f win64 asmDotProduct.asm</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">asmDotProduct.obj</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
+    <ClCompile Include="main.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <FileType>CppCode</FileType>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

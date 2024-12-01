@@ -76,6 +76,10 @@ void checkCorrectness(float cOutput, float asmOutput)
 	}
 }
 
+/* 
+ * performanceComparison() runs the actual performance comparison between C and assembly.
+ * @param n: Vector length.
+ */
 void performanceComparison(int n) {
 	int i;
 

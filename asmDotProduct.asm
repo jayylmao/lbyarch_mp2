@@ -1,4 +1,6 @@
 ; Jay Michael Carlos and Janica Megan Reyes - LBYARCH S14
+section .data
+	zero	dd	0.0
 section .text
 bits 64												; define project as 64-bit.
 default rel
@@ -13,7 +15,7 @@ asmDotProduct;
 	; rdx: address of vector a.
 	; r8: address of vector b.
 	sub		rsp, 40									; allot shadow space on stack for arguments.
-	xorps	xmm0, xmm0								; set xmm0 to 0 be used as accumulator.
+	movss	xmm0, [zero]							; set xmm0 to 0 be used as accumulator.
 	mov		rbx, 4									; for optimization, move constant 4 to rbx, as we increment by 4 later on.
 
 loopStart:

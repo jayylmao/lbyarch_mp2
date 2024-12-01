@@ -1,6 +1,6 @@
 ; Jay Michael Carlos and Janica Megan Reyes - LBYARCH S14
 section .data
-	zero	dd	0.0
+	sdot	dd	0.0
 section .text
 bits 64												; define project as 64-bit.
 default rel
@@ -14,8 +14,8 @@ asmDotProduct;
 	; rcx: vector length.
 	; rdx: address of vector a.
 	; r8: address of vector b.
-	sub		rsp, 40									; allot shadow space on stack for arguments.
-	movss	xmm0, [zero]							; set xmm0 to 0 be used as accumulator.
+	lea		r10, [sdot]
+	xorps	xmm0, xmm0								; set xmm0 to 0 be used as accumulator.
 	mov		rbx, 4									; for optimization, move constant 4 to rbx, as we increment by 4 later on.
 
 loopStart:
@@ -32,5 +32,5 @@ loopStart:
 	dec		rcx										; restart loop if rcx is not 0.
 	jmp		loopStart
 end:
-	add		rsp, 40									; remove shadow space.
+	movss	[r10], xmm0								; store the result in sdot.
 	ret

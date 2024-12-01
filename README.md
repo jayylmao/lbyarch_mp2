@@ -50,3 +50,5 @@ It is important to note that for the vector size of 2^29, the output of the proc
 
 ---
 # Source code, compilation, and execution demo
+![source code, compilation, and execution demo](analysis/analysis-video.mp4)
+To view in higher quality: [https://youtu.be/L7hpy2iCz5U](https://youtu.be/L7hpy2iCz5U)

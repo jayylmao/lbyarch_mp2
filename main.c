@@ -40,7 +40,7 @@ float cDotProduct(int n, float* a, float* b)
  */
 void generateVectorContents(int n, float **a, float **b)
 {
-	printf("\n[*] Generating random vector values: This may take a while.\n");
+	
 	int i;
 	// allocate memory to a and b based on vector length.
 	*a = (float *)malloc(n * sizeof(float));
@@ -69,7 +69,7 @@ void generateVectorContents(int n, float **a, float **b)
 void checkCorrectness(float cOutput, float asmOutput)
 {
 	if (fabs(cOutput - asmOutput) < 1e-6) {
-		printf("\n[/] Correctness check passed: Assembly output is the same as the C output.\n");
+		printf("[/] Correctness check passed: Assembly output is the same as the C output.\n\n");
 	}
 	else {
 		printf("\n[X] Correctness check failed: Assembly output is different from the C output.\n");
@@ -96,36 +96,34 @@ int main()
 
 	// 1. check time taken to process 2^20 values.
 	n = VECTOR_N_1;
-	generateVectorContents(n, &a, &b);
+	
 
-	// get average C execution time.
+	// get average execution time of both c and asm.
 	printf("\n1. 2^20 values:\n");
 	cTime = 0.0;
+	asmTime = 0.0;
+	printf("\n[*] Generating random vector values may take a while.\n");
 	for (i = 0; i < 20; i++) {
+		generateVectorContents(n, &a, &b);
 		start = clock();
 		cOutput = cDotProduct(n, a, b);
 		end = clock();
-		printf("C output: %f\n", cOutput);
+		printf("\t\bC output: %f\n", cOutput);
 		cTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-	}
-	cTime /= 20;
-
-	asmTime = 0.0;
-	for (i = 0; i < 20; i++) {
 		start = clock();
 		asmOutput = asmDotProduct(n, a, b);
 		end = clock();
 		printf("Assembly output: %f\n", asmOutput);
 		asmTime += ((double)(end - start)) / CLOCKS_PER_SEC;
+		checkCorrectness(cOutput, asmOutput);
+		free(a);
+		free(b);
 	}
+	cTime /= 20;
 	asmTime /= 20;
-
-	checkCorrectness(cOutput, asmOutput);
+	
 	printf("Average C execution time: %lf\n", cTime);
 	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
-
-	free(a);
-	free(b);
 
 	// 2. check time taken to process 2^24 values.
 	n = VECTOR_N_2;
@@ -134,66 +132,62 @@ int main()
 	// get average C execution time.
 	printf("\n2. 2^24 values:\n");
 	cTime = 0.0;
+	asmTime = 0.0;
+	printf("\n[*] Generating random vector values may take a while.\n");
 	for (i = 0; i < 20; i++) {
+		generateVectorContents(n, &a, &b);
 		start = clock();
 		cOutput = cDotProduct(n, a, b);
 		end = clock();
-		printf("C output: %f\n", cOutput);
+		printf("\t\bC output: %f\n", cOutput);
 		cTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-	}
-	cTime /= 20;
-
-	asmTime = 0.0;
-	for (i = 0; i < 20; i++) {
 		start = clock();
 		asmOutput = asmDotProduct(n, a, b);
 		end = clock();
 		printf("Assembly output: %f\n", asmOutput);
 		asmTime += ((double)(end - start)) / CLOCKS_PER_SEC;
+		checkCorrectness(cOutput, asmOutput);
+		free(a);
+		free(b);
 	}
+	cTime /= 20;
 	asmTime /= 20;
 	
-	checkCorrectness(cOutput, asmOutput);
 	printf("Average C execution time: %lf\n", cTime);
 	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
-
-	free(a);
-	free(b);
 
 	// 3. check time taken to process 2^29 values.
 	// NOTE: it's normal for this part to appear to "hang" for a while.
 	//       this process takes up 4GB of ram.
 	n = VECTOR_N_3;
-	generateVectorContents(n, &a, &b);
-
+	
 	// get average C execution time.
 	printf("\n3. 2^29 values:\n");
 	cTime = 0.0;
+	asmTime = 0.0;
+	printf("\n[*] Generating random vector values may take a while.\n");
 	for (i = 0; i < 20; i++) {
+		generateVectorContents(n, &a, &b);
 		start = clock();
 		cOutput = cDotProduct(n, a, b);
 		end = clock();
-		printf("C output: %f\n", cOutput);
+		printf("\t\bC output: %f\n", cOutput);
 		cTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-	}
-	cTime /= 20;
-
-	asmTime = 0.0;
-	for (i = 0; i < 20; i++) {
 		start = clock();
 		asmOutput = asmDotProduct(n, a, b);
 		end = clock();
 		printf("Assembly output: %f\n", asmOutput);
 		asmTime += ((double)(end - start)) / CLOCKS_PER_SEC;
+		checkCorrectness(cOutput, asmOutput);
+		free(a);
+		free(b);
 	}
+	cTime /= 20;
 	asmTime /= 20;
 
-	checkCorrectness(cOutput, asmOutput);
+	
 	printf("Average C execution time: %lf\n", cTime);
 	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
-
-	free(a);
-	free(b);
 
 	return 0;
 }

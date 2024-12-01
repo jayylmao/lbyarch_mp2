@@ -8,16 +8,16 @@
 
 ## Execution time
 ### 2^20 elements
-C: 0.002850s
-x86-64 assembly: 0.001200s
+- C: 0.002850s
+- x86-64 assembly: 0.001200s
 
 ### 2^24 elements
-C: 0.041150s
-x86-64 assembly: 0.020550s
+- C: 0.041150s
+- x86-64 assembly: 0.020550s
 
 ### 2^29 elements
-C: 1.652350s
-x86-64 assembly: 0.847450s
+- C: 1.652350s
+- x86-64 assembly: 0.847450s
 
 ---
 # Release mode
@@ -27,16 +27,16 @@ x86-64 assembly: 0.847450s
 
 ## Execution time
 ### 2^20 elements
-C: 0.001400s
-x86-64 assembly: 0.001400s
+- C: 0.001400s
+- x86-64 assembly: 0.001400s
 
 ### 2^24 elements
-C: 0.020350s
-x86-64 assembly: 0.020750s
+- C: 0.020350s
+- x86-64 assembly: 0.020750s
 
 ### 2^29 elements
-C: 0.025050s
-x86-64 assembly: 0.026400s
+- C: 0.025050s
+- x86-64 assembly: 0.026400s
 
 ---
 # Analysis

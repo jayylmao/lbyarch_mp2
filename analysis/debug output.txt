@@ -1,0 +1,258 @@
+
+1. 2^20 values:
+
+[*] Generating random vector values may take a while.
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 262261.750000
+Assembly output: 262261.750000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+Average C execution time: 0.002800
+Average x86-64 assembly execution time: 0.001550
+
+2. 2^24 values:
+
+[*] Generating random vector values may take a while.
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 4101173.500000
+Assembly output: 4101173.500000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+Average C execution time: 0.042500
+Average x86-64 assembly execution time: 0.024900
+
+3. 2^29 values:
+
+[*] Generating random vector values may take a while.
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+       C output: 16777216.000000
+Assembly output: 16777216.000000
+[/] Correctness check passed: Assembly output is the same as the C output.
+
+Average C execution time: 1.349350
+Average x86-64 assembly execution time: 0.791850

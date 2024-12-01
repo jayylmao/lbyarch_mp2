@@ -2,7 +2,7 @@
 #define VECTOR_N_1 1048576
 #define VECTOR_N_2 16777216
 #define VECTOR_N_3 536870912 // specs suggest 2^30 but you can lower if machine can't handle it. this is 2^29.
-#define RAND_LIMIT 1000.0f
+#define RAND_LIMIT 1.0f
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -40,7 +40,7 @@ float cDotProduct(int n, float* a, float* b)
  */
 void generateVectorContents(int n, float **a, float **b)
 {
-	
+	printf("\n[*] Generating random vector values may take a while.\n");
 	int i;
 	// allocate memory to a and b based on vector length.
 	*a = (float *)malloc(n * sizeof(float));
@@ -76,85 +76,69 @@ void checkCorrectness(float cOutput, float asmOutput)
 	}
 }
 
+void performanceComparison(int n) {
+	int i;
+
+	float* a = NULL; // store the contents of the first vector.
+	float* b = NULL; // store the contents of the second vector.
+
+	// initialize clock for measuring time taken.
+	clock_t start, end;
+
+	float cOutput, asmOutput; // store outputs of each function. should be the same for all passes.
+	double cTime, asmTime;
+	
+	cTime = 0.0;
+	asmTime = 0.0;
+	generateVectorContents(n, &a, &b);
+
+	for (i = 0; i < 20; i++) {
+		start = clock();
+		cOutput = cDotProduct(n, a, b);
+		end = clock();
+		printf("\t\bC output: %f\n", cOutput);
+		cTime += ((double)(end - start)) / CLOCKS_PER_SEC;
+		start = clock();
+		asmOutput = asmDotProduct(n, a, b);
+		end = clock();
+		printf("Assembly output: %f\n", asmOutput);
+		asmTime += ((double)(end - start)) / CLOCKS_PER_SEC;
+		checkCorrectness(cOutput, asmOutput);
+	}
+	cTime /= 20;
+	asmTime /= 20;
+	free(a);
+	free(b);
+	
+
+	printf("Average C execution time: %lf\n", cTime);
+	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
+}
+
 /*
  * Perform a dot product between two vectors a and b.
  */
 int main()
 {
-	int i;
 	int n; // store the length of the vectors.
-	float *a = NULL; // store the contents of the first vector.
-	float *b = NULL; // store the contents of the second vector.
-
-	float cOutput, asmOutput; // store outputs of each function. should be the same for all passes.
-
-	// initialize clock for measuring time taken.
-	clock_t start, end;
-	double cTime, asmTime;
+	
 
 	srand((unsigned int)time(NULL));
 
 	// 1. check time taken to process 2^20 values.
 	n = VECTOR_N_1;
 	
-
 	// get average execution time of both c and asm.
 	printf("\n1. 2^20 values:\n");
-	cTime = 0.0;
-	asmTime = 0.0;
-	printf("\n[*] Generating random vector values may take a while.\n");
-	for (i = 0; i < 20; i++) {
-		generateVectorContents(n, &a, &b);
-		start = clock();
-		cOutput = cDotProduct(n, a, b);
-		end = clock();
-		printf("\t\bC output: %f\n", cOutput);
-		cTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-		start = clock();
-		asmOutput = asmDotProduct(n, a, b);
-		end = clock();
-		printf("Assembly output: %f\n", asmOutput);
-		asmTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-		checkCorrectness(cOutput, asmOutput);
-		free(a);
-		free(b);
-	}
-	cTime /= 20;
-	asmTime /= 20;
+	performanceComparison(n);
 	
-	printf("Average C execution time: %lf\n", cTime);
-	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
 
 	// 2. check time taken to process 2^24 values.
 	n = VECTOR_N_2;
-	generateVectorContents(n, &a, &b);
 
 	// get average C execution time.
 	printf("\n2. 2^24 values:\n");
-	cTime = 0.0;
-	asmTime = 0.0;
-	printf("\n[*] Generating random vector values may take a while.\n");
-	for (i = 0; i < 20; i++) {
-		generateVectorContents(n, &a, &b);
-		start = clock();
-		cOutput = cDotProduct(n, a, b);
-		end = clock();
-		printf("\t\bC output: %f\n", cOutput);
-		cTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-		start = clock();
-		asmOutput = asmDotProduct(n, a, b);
-		end = clock();
-		printf("Assembly output: %f\n", asmOutput);
-		asmTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-		checkCorrectness(cOutput, asmOutput);
-		free(a);
-		free(b);
-	}
-	cTime /= 20;
-	asmTime /= 20;
-	
-	printf("Average C execution time: %lf\n", cTime);
-	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
+	performanceComparison(n);
 
 	// 3. check time taken to process 2^29 values.
 	// NOTE: it's normal for this part to appear to "hang" for a while.
@@ -163,31 +147,7 @@ int main()
 	
 	// get average C execution time.
 	printf("\n3. 2^29 values:\n");
-	cTime = 0.0;
-	asmTime = 0.0;
-	printf("\n[*] Generating random vector values may take a while.\n");
-	for (i = 0; i < 20; i++) {
-		generateVectorContents(n, &a, &b);
-		start = clock();
-		cOutput = cDotProduct(n, a, b);
-		end = clock();
-		printf("\t\bC output: %f\n", cOutput);
-		cTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-		start = clock();
-		asmOutput = asmDotProduct(n, a, b);
-		end = clock();
-		printf("Assembly output: %f\n", asmOutput);
-		asmTime += ((double)(end - start)) / CLOCKS_PER_SEC;
-		checkCorrectness(cOutput, asmOutput);
-		free(a);
-		free(b);
-	}
-	cTime /= 20;
-	asmTime /= 20;
-
-	
-	printf("Average C execution time: %lf\n", cTime);
-	printf("Average x86-64 assembly execution time: %lf\n", asmTime);
+	performanceComparison(n);
 
 	return 0;
 }
